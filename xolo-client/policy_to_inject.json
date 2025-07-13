@@ -1,0 +1,30 @@
+{
+  "policy_id": "P101",
+  "description": "Externo no puede descargar desde casa.",
+  "events": [
+    {
+      "event_id": "P101E1",
+      "subject": {
+        "attribute": "rol",
+        "value": "Externo"
+      },
+      "asset": {
+        "attribute": "recurso",
+        "value": "Expediente"
+      },
+      "space": {
+        "attribute": "ubicacion",
+        "value": "Casa"
+      },
+      "time": {
+        "attribute": "rango_horario",
+        "value": "corta"
+      },
+      "action": {
+        "attribute": "accion",
+        "value": "descarga"
+      }
+    }
+  ],
+  "effect": "deny"
+}

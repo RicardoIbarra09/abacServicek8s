@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: xolo-client-list
+spec:
+  template:
+    spec:
+      containers:
+      - name: xolo-client
+        image: xolo-client
+        imagePullPolicy: Never
+        command: ["poetry", "run", "xolo-client", "list"]
+      restartPolicy: Never
+  backoffLimit: 2

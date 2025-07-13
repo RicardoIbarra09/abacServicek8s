@@ -1,0 +1,53 @@
+{
+    "policy_id": "P51",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Interno pueda realizar conexion sobre el recurso 'ftp' desde una ubicación local entre las muy_larga; InternoPrivilegiado pueda realizar consulta sobre el recurso 'printer' desde una ubicación local entre las larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P51E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "stp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P51E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "printer"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  }

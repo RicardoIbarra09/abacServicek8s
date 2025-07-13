@@ -1,0 +1,6291 @@
+[
+  {
+    "policy_id": "P01",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Interno pueda realizar envio sobre el recurso 'ssh' desde una ubicación externa entre las larga; AnonimoExterno pueda realizar descarga sobre el recurso 'Z39_50' desde una ubicación local entre las corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P01E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ssh"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P01E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "Z39_50"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P02",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Interno pueda realizar conexion sobre el recurso 'X11' desde una ubicación local entre las larga; Invitado pueda realizar consulta sobre el recurso 'sql_net' desde una ubicación local entre las larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P02E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "X11"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P02E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "sql_net"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P03",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice descarga sobre el recurso 'exec' desde una ubicación local entre las muy_larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P03E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "exec"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P04",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar consulta sobre el recurso 'netstat' desde una ubicación externa entre las muy_larga; InternoPrivilegiado pueda realizar envio sobre el recurso 'mtp' desde una ubicación local entre las larga; InternoPrivilegiado pueda realizar conexion sobre el recurso 'klogin' desde una ubicación local entre las media; AnonimoExterno pueda realizar subida sobre el recurso 'ntp_u' desde una ubicación local entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P04E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "netstat"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      },
+      {
+        "event_id": "P04E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "mtp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      },
+      {
+        "event_id": "P04E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "klogin"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P04E4",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ntp_u"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P05",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: InternoPrivilegiado pueda realizar conexion sobre el recurso 'whois' desde una ubicación local entre las media; Interno pueda realizar subida sobre el recurso 'supdup' desde una ubicación local entre las larga; Interno pueda realizar conexion sobre el recurso 'supdup' desde una ubicación externa entre las muy_larga; AnonimoExterno pueda realizar lectura sobre el recurso 'iso_tsap' desde una ubicación externa entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P05E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "whois"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P05E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "supdup"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P05E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "supdup"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P05E4",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "iso_tsap"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P06",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar consulta sobre el recurso 'netbios_dgm' desde una ubicación externa entre las muy_corta; Invitado pueda realizar conexion sobre el recurso 'telnet' desde una ubicación externa entre las media.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P06E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "netbios_dgm"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      },
+      {
+        "event_id": "P06E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "telnet"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P07",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar subida sobre el recurso 'imap4' desde una ubicación externa entre las muy_larga; AnonimoExterno pueda realizar lectura sobre el recurso 'gopher' desde una ubicación local entre las media.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P07E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "imap4"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P07E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "gopher"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P08",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar lectura sobre el recurso 'rje' desde una ubicación local entre las corta; Interno pueda realizar lectura sobre el recurso 'ldap' desde una ubicación local entre las corta; Invitado pueda realizar conexion sobre el recurso 'imap4' desde una ubicación local entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P08E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "rje"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      },
+      {
+        "event_id": "P08E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ldap"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      },
+      {
+        "event_id": "P08E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "imap4"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P09",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice consulta sobre el recurso 'ntp_u' desde una ubicación externa entre las corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P09E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ntp_u"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P10",
+    "description": "Denegar acceso cuando el usuario Interno realice descarga sobre el recurso 'efs' desde una ubicación local entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P10E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "efs"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P11",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar subida sobre el recurso 'efs' desde una ubicación local entre las muy_larga; InternoPrivilegiado pueda realizar conexion sobre el recurso 'uucp' desde una ubicación externa entre las muy_corta; AnonimoExterno pueda realizar envio sobre el recurso 'finger' desde una ubicación externa entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P11E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "efs"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P11E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "uucp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P11E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "finger"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P12",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar subida sobre el recurso 'finger' desde una ubicación externa entre las larga; AnonimoExterno pueda realizar descarga sobre el recurso 'exec' desde una ubicación local entre las media; Invitado pueda realizar consulta sobre el recurso 'mtp' desde una ubicación local entre las media.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P12E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "finger"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P12E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "exec"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P12E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "mtp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P13",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: AnonimoExterno pueda realizar subida sobre el recurso 'finger' desde una ubicación externa entre las corta; Interno pueda realizar envio sobre el recurso 'netbios_ssn' desde una ubicación externa entre las muy_corta; Interno pueda realizar conexion sobre el recurso 'pop_2' desde una ubicación externa entre las muy_larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P13E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "finger"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P13E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "netbios_ssn"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      },
+      {
+        "event_id": "P13E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "pop_2"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P14",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: InternoPrivilegiado pueda realizar envio sobre el recurso 'ssh' desde una ubicación externa entre las media; AnonimoExterno pueda realizar descarga sobre el recurso 'bgp' desde una ubicación local entre las muy_larga; InternoPrivilegiado pueda realizar consulta sobre el recurso 'auth' desde una ubicación externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P14E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ssh"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      },
+      {
+        "event_id": "P14E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "bgp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P14E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "auth"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P15",
+    "description": "Denegar acceso cuando el usuario InternoPrivilegiado realice subida sobre el recurso 'uucp' desde una ubicación local entre las media.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P15E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "uucp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P16",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: Interno pueda realizar descarga sobre el recurso 'rje' desde una ubicación local entre las muy_corta; Interno pueda realizar descarga sobre el recurso 'pm_dump' desde una ubicación local entre las muy_corta; InternoPrivilegiado pueda realizar conexion sobre el recurso 'systat' desde una ubicación local entre las media; InternoPrivilegiado pueda realizar descarga sobre el recurso 'Z39_50' desde una ubicación externa entre las larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P16E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "rje"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P16E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "pm_dump"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P16E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "systat"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P16E4",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "Z39_50"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P17",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar envio sobre el recurso 'echo' desde una ubicación externa entre las corta; Interno pueda realizar envio sobre el recurso 'netstat' desde una ubicación externa entre las corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P17E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "echo"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      },
+      {
+        "event_id": "P17E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "netstat"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P18",
+    "description": "Denegar acceso cuando el usuario InternoPrivilegiado realice consulta sobre el recurso 'iso_tsap' desde una ubicación local entre las corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P18E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "iso_tsap"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P19",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar consulta sobre el recurso 'vmnet' desde una ubicación local entre las muy_corta; InternoPrivilegiado pueda realizar consulta sobre el recurso 'ssh' desde una ubicación local entre las muy_corta; Invitado pueda realizar consulta sobre el recurso 'login' desde una ubicación local entre las larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P19E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "vmnet"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      },
+      {
+        "event_id": "P19E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ssh"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      },
+      {
+        "event_id": "P19E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "login"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P20",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Interno pueda realizar subida sobre el recurso 'http_443' desde una ubicación externa entre las larga; Interno pueda realizar descarga sobre el recurso 'smtp' desde una ubicación local entre las media; Interno pueda realizar envio sobre el recurso 'uucp_path' desde una ubicación externa entre las muy_larga; InternoPrivilegiado pueda realizar lectura sobre el recurso 'IRC' desde una ubicación local entre las media.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P20E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "http_443"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P20E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "smtp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P20E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "uucp_path"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      },
+      {
+        "event_id": "P20E4",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "IRC"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P21",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: Interno pueda realizar descarga sobre el recurso 'shell' desde una ubicación local entre las muy_larga; AnonimoExterno pueda realizar envio sobre el recurso 'exec' desde una ubicación externa entre las larga; Invitado pueda realizar subida sobre el recurso 'efs' desde una ubicación local entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P21E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "shell"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P21E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "exec"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      },
+      {
+        "event_id": "P21E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "efs"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P22",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: InternoPrivilegiado pueda realizar subida sobre el recurso 'uucp' desde una ubicación local entre las muy_corta; Interno pueda realizar consulta sobre el recurso 'courier' desde una ubicación local entre las corta; AnonimoExterno pueda realizar envio sobre el recurso 'tftp_u' desde una ubicación local entre las corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P22E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "uucp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P22E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "courier"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      },
+      {
+        "event_id": "P22E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "tftp_u"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P23",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Interno pueda realizar lectura sobre el recurso 'netbios_ssn' desde una ubicación local entre las media; AnonimoExterno pueda realizar conexion sobre el recurso 'login' desde una ubicación externa entre las corta; Interno pueda realizar consulta sobre el recurso 'nntp' desde una ubicación local entre las corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P23E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "netbios_ssn"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      },
+      {
+        "event_id": "P23E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "login"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P23E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "nntp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P24",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Interno pueda realizar descarga sobre el recurso 'gopher' desde una ubicación externa entre las larga; Interno pueda realizar subida sobre el recurso 'netbios_ns' desde una ubicación local entre las larga; AnonimoExterno pueda realizar conexion sobre el recurso 'kshell' desde una ubicación externa entre las larga; InternoPrivilegiado pueda realizar conexion sobre el recurso 'http_443' desde una ubicación local entre las larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P24E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "gopher"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P24E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "netbios_ns"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P24E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "kshell"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P24E4",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "http_443"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P25",
+    "description": "Denegar acceso cuando el usuario Invitado realice consulta sobre el recurso 'vmnet' desde una ubicación externa entre las muy_larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P25E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "vmnet"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P26",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: AnonimoExterno pueda realizar conexion sobre el recurso 'Z39_50' desde una ubicación externa entre las muy_corta; Invitado pueda realizar descarga sobre el recurso 'Z39_50' desde una ubicación externa entre las muy_larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P26E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "Z39_50"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P26E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "Z39_50"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P27",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Interno pueda realizar consulta sobre el recurso 'whois' desde una ubicación local entre las corta; Interno pueda realizar lectura sobre el recurso 'netstat' desde una ubicación externa entre las muy_larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P27E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "whois"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      },
+      {
+        "event_id": "P27E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "netstat"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P28",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice consulta sobre el recurso 'sql_net' desde una ubicación externa entre las corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P28E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "sql_net"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P29",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Interno pueda realizar subida sobre el recurso 'iso_tsap' desde una ubicación externa entre las media; Interno pueda realizar lectura sobre el recurso 'rje' desde una ubicación local entre las larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P29E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "iso_tsap"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P29E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "rje"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P30",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar descarga sobre el recurso 'supdup' desde una ubicación externa entre las media; Invitado pueda realizar envio sobre el recurso 'mtp' desde una ubicación externa entre las corta; Interno pueda realizar descarga sobre el recurso 'pm_dump' desde una ubicación local entre las muy_larga; Invitado pueda realizar descarga sobre el recurso 'kshell' desde una ubicación externa entre las media.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P30E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "supdup"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P30E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "mtp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      },
+      {
+        "event_id": "P30E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "pm_dump"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P30E4",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "kshell"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P31",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar descarga sobre el recurso 'systat' desde una ubicación local entre las media; InternoPrivilegiado pueda realizar envio sobre el recurso 'bgp' desde una ubicación externa entre las larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P31E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "systat"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P31E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "bgp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P32",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'X11' desde una ubicación externa entre las media.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P32E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "X11"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P33",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Interno pueda realizar subida sobre el recurso 'rje' desde una ubicación local entre las corta; Interno pueda realizar descarga sobre el recurso 'sql_net' desde una ubicación local entre las larga; InternoPrivilegiado pueda realizar subida sobre el recurso 'exec' desde una ubicación externa entre las larga; Invitado pueda realizar descarga sobre el recurso 'uucp_path' desde una ubicación local entre las media.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P33E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "rje"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P33E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "sql_net"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P33E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "exec"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P33E4",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "uucp_path"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P34",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: Interno pueda realizar descarga sobre el recurso 'daytime' desde una ubicación local entre las corta; Invitado pueda realizar descarga sobre el recurso 'name' desde una ubicación externa entre las muy_larga; InternoPrivilegiado pueda realizar descarga sobre el recurso 'sql_net' desde una ubicación local entre las muy_larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P34E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "daytime"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P34E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "name"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P34E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "sql_net"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P35",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: InternoPrivilegiado pueda realizar lectura sobre el recurso 'whois' desde una ubicación externa entre las muy_larga; Invitado pueda realizar envio sobre el recurso 'netbios_ssn' desde una ubicación local entre las muy_larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P35E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "whois"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      },
+      {
+        "event_id": "P35E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "netbios_ssn"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P36",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice envio sobre el recurso 'icmp' desde una ubicación local entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P36E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "icmp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P37",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar lectura sobre el recurso 'finger' desde una ubicación local entre las larga; Invitado pueda realizar subida sobre el recurso 'imap4' desde una ubicación externa entre las larga; InternoPrivilegiado pueda realizar descarga sobre el recurso 'domain_u' desde una ubicación local entre las muy_larga; InternoPrivilegiado pueda realizar consulta sobre el recurso 'printer' desde una ubicación externa entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P37E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "finger"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      },
+      {
+        "event_id": "P37E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "imap4"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P37E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "domain_u"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P37E4",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "printer"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P38",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar descarga sobre el recurso 'netbios_dgm' desde una ubicación local entre las larga; InternoPrivilegiado pueda realizar subida sobre el recurso 'sunrpc' desde una ubicación externa entre las muy_larga; Invitado pueda realizar subida sobre el recurso 'klogin' desde una ubicación externa entre las muy_corta; Invitado pueda realizar consulta sobre el recurso 'uucp_path' desde una ubicación local entre las corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P38E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "netbios_dgm"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P38E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "sunrpc"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P38E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "klogin"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P38E4",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "uucp_path"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P39",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: AnonimoExterno pueda realizar descarga sobre el recurso 'ssh' desde una ubicación local entre las larga; AnonimoExterno pueda realizar descarga sobre el recurso 'Z39_50' desde una ubicación local entre las muy_larga; Interno pueda realizar conexion sobre el recurso 'csnet_ns' desde una ubicación externa entre las muy_larga; Invitado pueda realizar envio sobre el recurso 'http_443' desde una ubicación local entre las muy_larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P39E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ssh"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P39E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "Z39_50"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P39E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "csnet_ns"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P39E4",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "http_443"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P40",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar lectura sobre el recurso 'telnet' desde una ubicación local entre las corta; Invitado pueda realizar subida sobre el recurso 'gopher' desde una ubicación local entre las muy_corta; AnonimoExterno pueda realizar lectura sobre el recurso 'netbios_ns' desde una ubicación externa entre las muy_larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P40E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "telnet"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      },
+      {
+        "event_id": "P40E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "gopher"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P40E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "netbios_ns"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P41",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: Interno pueda realizar consulta sobre el recurso 'iso_tsap' desde una ubicación externa entre las larga; Invitado pueda realizar conexion sobre el recurso 'name' desde una ubicación local entre las larga; Interno pueda realizar descarga sobre el recurso 'netstat' desde una ubicación local entre las media.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P41E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "iso_tsap"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      },
+      {
+        "event_id": "P41E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "name"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P41E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "netstat"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P42",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar lectura sobre el recurso 'efs' desde una ubicación externa entre las media; InternoPrivilegiado pueda realizar descarga sobre el recurso 'efs' desde una ubicación externa entre las muy_larga; AnonimoExterno pueda realizar descarga sobre el recurso 'icmp' desde una ubicación local entre las muy_larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P42E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "efs"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      },
+      {
+        "event_id": "P42E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "efs"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P42E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "icmp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P43",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: AnonimoExterno pueda realizar consulta sobre el recurso 'link' desde una ubicación externa entre las media; InternoPrivilegiado pueda realizar subida sobre el recurso 'rje' desde una ubicación externa entre las muy_larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P43E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "link"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      },
+      {
+        "event_id": "P43E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "rje"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P44",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: InternoPrivilegiado pueda realizar lectura sobre el recurso 'ssh' desde una ubicación local entre las corta; InternoPrivilegiado pueda realizar envio sobre el recurso 'icmp' desde una ubicación local entre las media; Interno pueda realizar subida sobre el recurso 'ctf' desde una ubicación externa entre las muy_corta; Invitado pueda realizar lectura sobre el recurso 'ntp_u' desde una ubicación externa entre las media.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P44E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ssh"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      },
+      {
+        "event_id": "P44E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "icmp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      },
+      {
+        "event_id": "P44E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ctf"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P44E4",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ntp_u"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P45",
+    "description": "Denegar acceso cuando el usuario Invitado realice conexion sobre el recurso 'echo' desde una ubicación externa entre las larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P45E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "echo"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P46",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar consulta sobre el recurso 'printer' desde una ubicación externa entre las media; InternoPrivilegiado pueda realizar descarga sobre el recurso 'finger' desde una ubicación local entre las media; AnonimoExterno pueda realizar envio sobre el recurso 'ntp_u' desde una ubicación local entre las muy_larga; Interno pueda realizar descarga sobre el recurso 'imap4' desde una ubicación externa entre las media.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P46E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "printer"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      },
+      {
+        "event_id": "P46E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "finger"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P46E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ntp_u"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      },
+      {
+        "event_id": "P46E4",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "imap4"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P47",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: InternoPrivilegiado pueda realizar conexion sobre el recurso 'exec' desde una ubicación externa entre las muy_larga; InternoPrivilegiado pueda realizar conexion sobre el recurso 'whois' desde una ubicación externa entre las muy_larga; AnonimoExterno pueda realizar lectura sobre el recurso 'IRC' desde una ubicación externa entre las muy_larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P47E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "exec"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P47E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "whois"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P47E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "IRC"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P48",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: AnonimoExterno pueda realizar descarga sobre el recurso 'http_443' desde una ubicación externa entre las muy_larga; AnonimoExterno pueda realizar descarga sobre el recurso 'vmnet' desde una ubicación externa entre las corta; Interno pueda realizar envio sobre el recurso 'bgp' desde una ubicación externa entre las larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P48E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "http_443"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P48E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "vmnet"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P48E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "bgp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P49",
+    "description": "Denegar acceso cuando el usuario Invitado realice lectura sobre el recurso 'ldap' desde una ubicación local entre las larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P49E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ldap"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P50",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice subida sobre el recurso 'link' desde una ubicación externa entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P50E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "link"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P51",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Interno pueda realizar conexion sobre el recurso 'ftp' desde una ubicación local entre las muy_larga; InternoPrivilegiado pueda realizar consulta sobre el recurso 'printer' desde una ubicación local entre las larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P51E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ftp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P51E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "printer"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P52",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar lectura sobre el recurso 'exec' desde una ubicación local entre las muy_larga; InternoPrivilegiado pueda realizar descarga sobre el recurso 'http' desde una ubicación externa entre las larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P52E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "exec"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      },
+      {
+        "event_id": "P52E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "http"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P53",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: InternoPrivilegiado pueda realizar consulta sobre el recurso 'klogin' desde una ubicación local entre las corta; AnonimoExterno pueda realizar envio sobre el recurso 'csnet_ns' desde una ubicación externa entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P53E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "klogin"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      },
+      {
+        "event_id": "P53E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "csnet_ns"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P54",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar conexion sobre el recurso 'Z39_50' desde una ubicación local entre las media; InternoPrivilegiado pueda realizar consulta sobre el recurso 'ntp_u' desde una ubicación local entre las larga; Interno pueda realizar conexion sobre el recurso 'bgp' desde una ubicación local entre las muy_corta; AnonimoExterno pueda realizar consulta sobre el recurso 'remote_job' desde una ubicación externa entre las corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P54E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "Z39_50"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P54E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ntp_u"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      },
+      {
+        "event_id": "P54E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "bgp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P54E4",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "remote_job"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P55",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar subida sobre el recurso 'time' desde una ubicación local entre las larga; Interno pueda realizar subida sobre el recurso 'remote_job' desde una ubicación externa entre las muy_corta; Interno pueda realizar subida sobre el recurso 'whois' desde una ubicación externa entre las larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P55E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "time"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P55E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "remote_job"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P55E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "whois"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P56",
+    "description": "Permitir acceso cuando el usuario Invitado realice descarga sobre el recurso 'rje' desde una ubicación local entre las muy_larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P56E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "rje"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P57",
+    "description": "Denegar acceso cuando el usuario Invitado realice conexion sobre el recurso 'ssh' desde una ubicación local entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P57E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ssh"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P58",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: AnonimoExterno pueda realizar lectura sobre el recurso 'ldap' desde una ubicación local entre las larga; InternoPrivilegiado pueda realizar lectura sobre el recurso 'rje' desde una ubicación local entre las media; InternoPrivilegiado pueda realizar lectura sobre el recurso 'Z39_50' desde una ubicación externa entre las corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P58E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ldap"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      },
+      {
+        "event_id": "P58E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "rje"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      },
+      {
+        "event_id": "P58E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "Z39_50"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P59",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Interno pueda realizar envio sobre el recurso 'rje' desde una ubicación externa entre las muy_larga; Invitado pueda realizar subida sobre el recurso 'netbios_dgm' desde una ubicación local entre las larga; AnonimoExterno pueda realizar lectura sobre el recurso 'bgp' desde una ubicación externa entre las muy_larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P59E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "rje"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      },
+      {
+        "event_id": "P59E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "netbios_dgm"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P59E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "bgp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P60",
+    "description": "Denegar acceso cuando el usuario Interno realice subida sobre el recurso 'daytime' desde una ubicación local entre las media.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P60E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "daytime"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P61",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar descarga sobre el recurso 'shell' desde una ubicación local entre las larga; Invitado pueda realizar envio sobre el recurso 'netbios_ssn' desde una ubicación local entre las larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P61E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "shell"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P61E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "netbios_ssn"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P62",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar subida sobre el recurso 'name' desde una ubicación local entre las media; Invitado pueda realizar conexion sobre el recurso 'smtp' desde una ubicación local entre las larga; InternoPrivilegiado pueda realizar descarga sobre el recurso 'private' desde una ubicación local entre las corta; AnonimoExterno pueda realizar lectura sobre el recurso 'tftp_u' desde una ubicación externa entre las larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P62E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "name"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P62E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "smtp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P62E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "private"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P62E4",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "tftp_u"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P63",
+    "description": "Denegar acceso cuando el usuario Invitado realice lectura sobre el recurso 'rje' desde una ubicación externa entre las larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P63E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "rje"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P64",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: Interno pueda realizar descarga sobre el recurso 'pm_dump' desde una ubicación externa entre las muy_larga; InternoPrivilegiado pueda realizar envio sobre el recurso 'ecr_i' desde una ubicación externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P64E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "pm_dump"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P64E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ecr_i"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P65",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Interno pueda realizar descarga sobre el recurso 'gopher' desde una ubicación local entre las muy_corta; Invitado pueda realizar envio sobre el recurso 'domain_u' desde una ubicación local entre las media; AnonimoExterno pueda realizar lectura sobre el recurso 'icmp' desde una ubicación externa entre las corta; Interno pueda realizar descarga sobre el recurso 'netbios_ssn' desde una ubicación externa entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P65E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "gopher"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P65E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "domain_u"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      },
+      {
+        "event_id": "P65E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "icmp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      },
+      {
+        "event_id": "P65E4",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "netbios_ssn"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P66",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar descarga sobre el recurso 'printer' desde una ubicación externa entre las larga; AnonimoExterno pueda realizar lectura sobre el recurso 'IRC' desde una ubicación local entre las corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P66E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "printer"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P66E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "IRC"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P67",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: InternoPrivilegiado pueda realizar lectura sobre el recurso 'smtp' desde una ubicación externa entre las muy_corta; Invitado pueda realizar conexion sobre el recurso 'Z39_50' desde una ubicación externa entre las muy_corta; Interno pueda realizar subida sobre el recurso 'netbios_ns' desde una ubicación local entre las media; Interno pueda realizar consulta sobre el recurso 'ldap' desde una ubicación local entre las larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P67E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "smtp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      },
+      {
+        "event_id": "P67E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "Z39_50"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P67E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "netbios_ns"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P67E4",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ldap"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P68",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Interno pueda realizar conexion sobre el recurso 'ctf' desde una ubicación local entre las muy_corta; AnonimoExterno pueda realizar subida sobre el recurso 'ntp_u' desde una ubicación local entre las muy_larga; Interno pueda realizar descarga sobre el recurso 'vmnet' desde una ubicación externa entre las muy_larga; AnonimoExterno pueda realizar conexion sobre el recurso 'smtp' desde una ubicación externa entre las media.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P68E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ctf"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P68E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ntp_u"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P68E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "vmnet"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P68E4",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "smtp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P69",
+    "description": "Permitir acceso cuando el usuario InternoPrivilegiado realice lectura sobre el recurso 'http_443' desde una ubicación local entre las media.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P69E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "http_443"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P70",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: AnonimoExterno pueda realizar conexion sobre el recurso 'netstat' desde una ubicación externa entre las corta; AnonimoExterno pueda realizar envio sobre el recurso 'printer' desde una ubicación externa entre las larga; InternoPrivilegiado pueda realizar consulta sobre el recurso 'supdup' desde una ubicación local entre las muy_larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P70E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "netstat"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P70E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "printer"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      },
+      {
+        "event_id": "P70E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "supdup"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P71",
+    "description": "Permitir acceso cuando el usuario Interno realice consulta sobre el recurso 'echo' desde una ubicación local entre las muy_larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P71E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "echo"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P72",
+    "description": "Denegar acceso cuando el usuario Interno realice envio sobre el recurso 'nntp' desde una ubicación local entre las larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P72E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "nntp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P73",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: InternoPrivilegiado pueda realizar lectura sobre el recurso 'kshell' desde una ubicación externa entre las media; InternoPrivilegiado pueda realizar descarga sobre el recurso 'Z39_50' desde una ubicación local entre las muy_larga; AnonimoExterno pueda realizar conexion sobre el recurso 'telnet' desde una ubicación local entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P73E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "kshell"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      },
+      {
+        "event_id": "P73E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "Z39_50"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P73E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "telnet"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P74",
+    "description": "Permitir acceso cuando el usuario Invitado realice envio sobre el recurso 'courier' desde una ubicación externa entre las corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P74E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "courier"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P75",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: AnonimoExterno pueda realizar envio sobre el recurso 'daytime' desde una ubicación externa entre las larga; InternoPrivilegiado pueda realizar consulta sobre el recurso 'csnet_ns' desde una ubicación externa entre las corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P75E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "daytime"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      },
+      {
+        "event_id": "P75E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "csnet_ns"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P76",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar envio sobre el recurso 'netbios_ssn' desde una ubicación externa entre las corta; AnonimoExterno pueda realizar lectura sobre el recurso 'Z39_50' desde una ubicación externa entre las muy_corta; Invitado pueda realizar consulta sobre el recurso 'gopher' desde una ubicación local entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P76E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "netbios_ssn"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      },
+      {
+        "event_id": "P76E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "Z39_50"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      },
+      {
+        "event_id": "P76E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "gopher"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P77",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar consulta sobre el recurso 'shell' desde una ubicación externa entre las media; InternoPrivilegiado pueda realizar descarga sobre el recurso 'netbios_ssn' desde una ubicación externa entre las larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P77E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "shell"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      },
+      {
+        "event_id": "P77E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "netbios_ssn"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P78",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice subida sobre el recurso 'sunrpc' desde una ubicación externa entre las media.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P78E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "sunrpc"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P79",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: InternoPrivilegiado pueda realizar lectura sobre el recurso 'pm_dump' desde una ubicación local entre las corta; Invitado pueda realizar subida sobre el recurso 'ssh' desde una ubicación local entre las corta; Interno pueda realizar envio sobre el recurso 'klogin' desde una ubicación externa entre las muy_larga; Interno pueda realizar consulta sobre el recurso 'netstat' desde una ubicación externa entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P79E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "pm_dump"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      },
+      {
+        "event_id": "P79E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ssh"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P79E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "klogin"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      },
+      {
+        "event_id": "P79E4",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "netstat"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P80",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: Interno pueda realizar envio sobre el recurso 'csnet_ns' desde una ubicación local entre las larga; Interno pueda realizar subida sobre el recurso 'hostnames' desde una ubicación local entre las corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P80E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "csnet_ns"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      },
+      {
+        "event_id": "P80E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "hostnames"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P81",
+    "description": "Denegar acceso cuando el usuario Interno realice consulta sobre el recurso 'pop_3' desde una ubicación externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P81E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "pop_3"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P82",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: InternoPrivilegiado pueda realizar lectura sobre el recurso 'netbios_ssn' desde una ubicación externa entre las larga; InternoPrivilegiado pueda realizar consulta sobre el recurso 'daytime' desde una ubicación local entre las media; Interno pueda realizar consulta sobre el recurso 'http_443' desde una ubicación externa entre las muy_larga; Interno pueda realizar envio sobre el recurso 'pop_2' desde una ubicación externa entre las media.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P82E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "netbios_ssn"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      },
+      {
+        "event_id": "P82E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "daytime"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      },
+      {
+        "event_id": "P82E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "http_443"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      },
+      {
+        "event_id": "P82E4",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "pop_2"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P83",
+    "description": "Permitir acceso cuando el usuario Interno realice envio sobre el recurso 'domain' desde una ubicación local entre las media.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P83E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "domain"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P84",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Interno pueda realizar envio sobre el recurso 'ntp_u' desde una ubicación externa entre las corta; AnonimoExterno pueda realizar subida sobre el recurso 'IRC' desde una ubicación local entre las larga; Invitado pueda realizar subida sobre el recurso 'ftp_data' desde una ubicación local entre las larga; InternoPrivilegiado pueda realizar consulta sobre el recurso 'smtp' desde una ubicación local entre las media.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P84E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ntp_u"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      },
+      {
+        "event_id": "P84E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "IRC"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P84E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ftp_data"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P84E4",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "smtp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P85",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: Interno pueda realizar descarga sobre el recurso 'private' desde una ubicación local entre las muy_corta; InternoPrivilegiado pueda realizar consulta sobre el recurso 'iso_tsap' desde una ubicación externa entre las media.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P85E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "private"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P85E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "iso_tsap"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P86",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar conexion sobre el recurso 'nntp' desde una ubicación local entre las media; Interno pueda realizar envio sobre el recurso 'ntp_u' desde una ubicación externa entre las muy_corta; Invitado pueda realizar subida sobre el recurso 'bgp' desde una ubicación externa entre las muy_corta; AnonimoExterno pueda realizar envio sobre el recurso 'ftp' desde una ubicación local entre las muy_larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P86E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "nntp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P86E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ntp_u"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      },
+      {
+        "event_id": "P86E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "bgp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P86E4",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ftp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P87",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: InternoPrivilegiado pueda realizar consulta sobre el recurso 'uucp' desde una ubicación local entre las corta; InternoPrivilegiado pueda realizar lectura sobre el recurso 'other' desde una ubicación externa entre las muy_larga; AnonimoExterno pueda realizar descarga sobre el recurso 'discard' desde una ubicación local entre las larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P87E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "uucp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      },
+      {
+        "event_id": "P87E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "other"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      },
+      {
+        "event_id": "P87E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "discard"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P88",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: InternoPrivilegiado pueda realizar consulta sobre el recurso 'iso_tsap' desde una ubicación externa entre las larga; Invitado pueda realizar descarga sobre el recurso 'supdup' desde una ubicación local entre las media; AnonimoExterno pueda realizar consulta sobre el recurso 'nntp' desde una ubicación externa entre las larga; InternoPrivilegiado pueda realizar consulta sobre el recurso 'uucp_path' desde una ubicación externa entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P88E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "iso_tsap"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      },
+      {
+        "event_id": "P88E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "supdup"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P88E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "nntp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      },
+      {
+        "event_id": "P88E4",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "uucp_path"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P89",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: Interno pueda realizar envio sobre el recurso 'csnet_ns' desde una ubicación local entre las media; InternoPrivilegiado pueda realizar consulta sobre el recurso 'iso_tsap' desde una ubicación externa entre las corta; Invitado pueda realizar lectura sobre el recurso 'netbios_ssn' desde una ubicación externa entre las media; Interno pueda realizar lectura sobre el recurso 'ecr_i' desde una ubicación externa entre las media.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P89E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "csnet_ns"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      },
+      {
+        "event_id": "P89E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "iso_tsap"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      },
+      {
+        "event_id": "P89E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "netbios_ssn"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      },
+      {
+        "event_id": "P89E4",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ecr_i"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P90",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice consulta sobre el recurso 'http' desde una ubicación local entre las media.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P90E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "http"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P91",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: Interno pueda realizar conexion sobre el recurso 'auth' desde una ubicación externa entre las muy_corta; AnonimoExterno pueda realizar envio sobre el recurso 'printer' desde una ubicación local entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P91E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "auth"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P91E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "printer"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P92",
+    "description": "Permitir acceso cuando el usuario Interno realice envio sobre el recurso 'pop_2' desde una ubicación local entre las corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P92E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "pop_2"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P93",
+    "description": "Denegar acceso cuando el usuario Invitado realice lectura sobre el recurso 'gopher' desde una ubicación externa entre las larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P93E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "gopher"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P94",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: AnonimoExterno pueda realizar consulta sobre el recurso 'pop_3' desde una ubicación local entre las muy_larga; Interno pueda realizar lectura sobre el recurso 'sql_net' desde una ubicación externa entre las larga; InternoPrivilegiado pueda realizar lectura sobre el recurso 'sql_net' desde una ubicación local entre las larga; AnonimoExterno pueda realizar lectura sobre el recurso 'efs' desde una ubicación local entre las larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P94E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "pop_3"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      },
+      {
+        "event_id": "P94E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "sql_net"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      },
+      {
+        "event_id": "P94E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "sql_net"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      },
+      {
+        "event_id": "P94E4",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "efs"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P95",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: AnonimoExterno pueda realizar conexion sobre el recurso 'pm_dump' desde una ubicación externa entre las muy_larga; Interno pueda realizar conexion sobre el recurso 'other' desde una ubicación externa entre las media.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P95E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "pm_dump"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P95E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "other"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P96",
+    "description": "Denegar acceso cuando el usuario InternoPrivilegiado realice subida sobre el recurso 'ssh' desde una ubicación externa entre las media.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P96E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ssh"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P97",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: AnonimoExterno pueda realizar subida sobre el recurso 'csnet_ns' desde una ubicación externa entre las muy_larga; AnonimoExterno pueda realizar conexion sobre el recurso 'icmp' desde una ubicación local entre las muy_corta; AnonimoExterno pueda realizar descarga sobre el recurso 'bgp' desde una ubicación local entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P97E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "csnet_ns"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P97E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "icmp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      },
+      {
+        "event_id": "P97E3",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "bgp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P98",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice consulta sobre el recurso 'uucp_path' desde una ubicación externa entre las corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P98E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "uucp_path"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P99",
+    "description": "Permitir acceso cuando ocurre alguna de las siguientes condiciones: InternoPrivilegiado pueda realizar subida sobre el recurso 'domain_u' desde una ubicación externa entre las muy_larga; Interno pueda realizar descarga sobre el recurso 'printer' desde una ubicación local entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P99E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "domain_u"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      },
+      {
+        "event_id": "P99E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "printer"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P100",
+    "description": "Denegar acceso cuando ocurre alguna de las siguientes condiciones: Invitado pueda realizar descarga sobre el recurso 'daytime' desde una ubicación local entre las media; Invitado pueda realizar subida sobre el recurso 'X11' desde una ubicación local entre las media.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P100E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "daytime"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      },
+      {
+        "event_id": "P100E2",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "X11"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Local"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      }
+    ]
+  }
+]

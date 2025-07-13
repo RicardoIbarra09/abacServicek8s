@@ -1,0 +1,3002 @@
+[
+  {
+    "policy_id": "P001",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'private' desde una ubicación Externa entre las larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P001E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "private"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P002",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice lectura sobre el recurso 'domain_u' desde una ubicación Externa entre las corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P002E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "domain_u"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P003",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'ntp_u' desde una ubicación Externa entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P003E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ntp_u"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P004",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'IRC' desde una ubicación Externa entre las corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P004E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "IRC"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P005",
+    "description": "Permitir acceso cuando el usuario Interno realice envio sobre el recurso 'smtp' desde una ubicación Externa entre las media.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P005E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "smtp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P006",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice lectura sobre el recurso 'domain_u' desde una ubicación Externa entre las muy_larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P006E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "domain_u"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P007",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice descarga sobre el recurso 'ftp_data' desde una ubicación Externa entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P007E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ftp_data"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P008",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'X11' desde una ubicación Externa entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P008E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "X11"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P009",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'other' desde una ubicación Externa entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P009E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "other"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P010",
+    "description": "Permitir acceso cuando el usuario Interno realice envio sobre el recurso 'smtp' desde una ubicación Externa entre las corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P010E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "smtp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P011",
+    "description": "Permitir acceso cuando el usuario Invitado realice subida sobre el recurso 'ftp' desde una ubicación Externa entre las media.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P011E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ftp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P012",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice consulta sobre el recurso 'http' desde una ubicación Externa entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P012E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "http"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P013",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice subida sobre el recurso 'ftp' desde una ubicación Externa entre las muy_larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P013E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ftp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P014",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'IRC' desde una ubicación Externa entre las media.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P014E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "IRC"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P015",
+    "description": "Permitir acceso cuando el usuario Interno realice conexion sobre el recurso 'telnet' desde una ubicación Externa entre las corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P015E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "telnet"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P016",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'finger' desde una ubicación Externa entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P016E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "finger"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P017",
+    "description": "Permitir acceso cuando el usuario Interno realice envio sobre el recurso 'smtp' desde una ubicación Externa entre las larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P017E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "smtp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P018",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'time' desde una ubicación Externa entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P018E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "time"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P019",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'auth' desde una ubicación Externa entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P019E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "auth"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P020",
+    "description": "Permitir acceso cuando el usuario Interno realice consulta sobre el recurso 'http' desde una ubicación Externa entre las media.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P020E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "http"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P021",
+    "description": "Permitir acceso cuando el usuario Interno realice subida sobre el recurso 'ftp' desde una ubicación Externa entre las larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P021E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ftp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P022",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'link' desde una ubicación Externa entre las corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P022E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "link"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P023",
+    "description": "Permitir acceso cuando el usuario Interno realice consulta sobre el recurso 'http' desde una ubicación Externa entre las muy_larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P023E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "http"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P024",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'private' desde una ubicación Externa entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P024E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "private"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P025",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'remote_job' desde una ubicación Externa entre las corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P025E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "remote_job"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P026",
+    "description": "Permitir acceso cuando el usuario Interno realice conexion sobre el recurso 'telnet' desde una ubicación Externa entre las media.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P026E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "telnet"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P027",
+    "description": "Permitir acceso cuando el usuario Interno realice envio sobre el recurso 'smtp' desde una ubicación Externa entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P027E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "smtp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P028",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'IRC' desde una ubicación Externa entre las muy_larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P028E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "IRC"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P029",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'tftp_u' desde una ubicación Externa entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P029E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "tftp_u"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P030",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice lectura sobre el recurso 'domain_u' desde una ubicación Externa entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P030E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "domain_u"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P031",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'finger' desde una ubicación Externa entre las media.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P031E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "finger"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P032",
+    "description": "Permitir acceso cuando el usuario Interno realice consulta sobre el recurso 'http' desde una ubicación Externa entre las larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P032E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "http"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P033",
+    "description": "Permitir acceso cuando el usuario Interno realice consulta sobre el recurso 'http' desde una ubicación Externa entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P033E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "http"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P034",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'finger' desde una ubicación Externa entre las corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P034E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "finger"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P035",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'telnet' desde una ubicación Externa entre las larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P035E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "telnet"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P036",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice lectura sobre el recurso 'domain_u' desde una ubicación Externa entre las larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P036E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "domain_u"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P037",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'ecr_i' desde una ubicación Externa entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P037E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ecr_i"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P038",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice descarga sobre el recurso 'ftp_data' desde una ubicación Externa entre las corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P038E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ftp_data"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P039",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'auth' desde una ubicación Externa entre las corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P039E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "auth"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P040",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice envio sobre el recurso 'smtp' desde una ubicación Externa entre las muy_larga.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P040E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "smtp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "envio"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P041",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice descarga sobre el recurso 'ftp_data' desde una ubicación Externa entre las media.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P041E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ftp_data"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P042",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'eco_i' desde una ubicación Externa entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P042E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "eco_i"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P043",
+    "description": "Permitir acceso cuando el usuario Interno realice consulta sobre el recurso 'http' desde una ubicación Externa entre las corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P043E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "http"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "consulta"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P044",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice lectura sobre el recurso 'domain_u' desde una ubicación Externa entre las media.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P044E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "domain_u"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "lectura"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P045",
+    "description": "Permitir acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'icmp' desde una ubicación Externa entre las muy_corta.",
+    "effect": "permit",
+    "events": [
+      {
+        "event_id": "P045E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "icmp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P046",
+    "description": "Denegar acceso cuando el usuario Interno realice conexion sobre el recurso 'uucp' desde una ubicación Externa entre las corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P046E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "uucp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P047",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'systat' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P047E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "systat"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P048",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'other' desde una ubicación Externa entre las larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P048E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "other"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P049",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'netbios_ssn' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P049E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "netbios_ssn"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P050",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'domain' desde una ubicación Externa entre las muy_larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P050E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "domain"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P051",
+    "description": "Denegar acceso cuando el usuario Invitado realice subida sobre el recurso 'ftp' desde una ubicación Externa entre las larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P051E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ftp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P052",
+    "description": "Denegar acceso cuando el usuario Interno realice conexion sobre el recurso 'login' desde una ubicación Externa entre las corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P052E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "login"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P053",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'csnet_ns' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P053E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "csnet_ns"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P054",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'telnet' desde una ubicación Externa entre las media.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P054E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "telnet"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P055",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'telnet' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P055E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "telnet"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P056",
+    "description": "Denegar acceso cuando el usuario Interno realice conexion sobre el recurso 'pop_3' desde una ubicación Externa entre las media.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P056E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "pop_3"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P057",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'bgp' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P057E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "bgp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P058",
+    "description": "Denegar acceso cuando el usuario Invitado realice conexion sobre el recurso 'telnet' desde una ubicación Externa entre las larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P058E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Invitado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "telnet"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P059",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'remote_job' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P059E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "remote_job"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P060",
+    "description": "Denegar acceso cuando el usuario Interno realice conexion sobre el recurso 'pop_3' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P060E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "pop_3"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P061",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'IRC' desde una ubicación Externa entre las larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P061E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "IRC"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P062",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'IRC' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P062E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "IRC"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P063",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'netstat' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P063E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "netstat"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P064",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'imap4' desde una ubicación Externa entre las larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P064E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "imap4"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P065",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'supdup' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P065E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "supdup"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P066",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'name' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P066E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "name"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P067",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'uucp_path' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P067E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "uucp_path"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P068",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'klogin' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P068E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "klogin"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P069",
+    "description": "Denegar acceso cuando el usuario InternoPrivilegiado realice conexion sobre el recurso 'telnet' desde una ubicación Externa entre las larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P069E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "telnet"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P070",
+    "description": "Denegar acceso cuando el usuario Interno realice subida sobre el recurso 'ftp' desde una ubicación Externa entre las corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P070E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ftp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P071",
+    "description": "Denegar acceso cuando el usuario Interno realice conexion sobre el recurso 'pop_3' desde una ubicación Externa entre las corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P071E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "pop_3"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P072",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'hostnames' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P072E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "hostnames"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P073",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'nntp' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P073E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "nntp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P074",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice subida sobre el recurso 'ftp' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P074E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ftp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P075",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'efs' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P075E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "efs"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P076",
+    "description": "Denegar acceso cuando el usuario Interno realice conexion sobre el recurso 'telnet' desde una ubicación Externa entre las muy_larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P076E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "telnet"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P077",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'netbios_ns' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P077E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "netbios_ns"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P078",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'other' desde una ubicación Externa entre las muy_larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P078E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "other"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P079",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'imap4' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P079E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "imap4"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P080",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'pop_3' desde una ubicación Externa entre las corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P080E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "pop_3"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P081",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'telnet' desde una ubicación Externa entre las corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P081E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "telnet"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P082",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'pm_dump' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P082E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "pm_dump"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P083",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'sql_net' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P083E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "sql_net"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P084",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'domain' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P084E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "domain"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P085",
+    "description": "Denegar acceso cuando el usuario Interno realice descarga sobre el recurso 'ftp_data' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P085E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ftp_data"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P086",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice descarga sobre el recurso 'ftp_data' desde una ubicación Externa entre las larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P086E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ftp_data"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "descarga"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P087",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'http_443' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P087E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "http_443"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P088",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'shell' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P088E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "shell"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P089",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'private' desde una ubicación Externa entre las corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P089E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "private"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P090",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'daytime' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P090E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "daytime"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P091",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'ldap' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P091E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ldap"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P092",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'tim_i' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P092E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "tim_i"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P093",
+    "description": "Denegar acceso cuando el usuario Interno realice conexion sobre el recurso 'telnet' desde una ubicación Externa entre las larga.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P093E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "Interno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "telnet"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "larga"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P094",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'other' desde una ubicación Externa entre las corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P094E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "other"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P095",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'private' desde una ubicación Externa entre las media.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P095E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "private"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P096",
+    "description": "Denegar acceso cuando el usuario InternoPrivilegiado realice subida sobre el recurso 'ftp' desde una ubicación Externa entre las media.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P096E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "ftp"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "subida"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P097",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'vmnet' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P097E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "vmnet"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P098",
+    "description": "Denegar acceso cuando el usuario InternoPrivilegiado realice conexion sobre el recurso 'telnet' desde una ubicación Externa entre las media.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P098E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "InternoPrivilegiado"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "telnet"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "media"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P099",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'shell' desde una ubicación Externa entre las corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P099E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "shell"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  },
+  {
+    "policy_id": "P100",
+    "description": "Denegar acceso cuando el usuario AnonimoExterno realice conexion sobre el recurso 'pop_2' desde una ubicación Externa entre las muy_corta.",
+    "effect": "deny",
+    "events": [
+      {
+        "event_id": "P100E1",
+        "subject": {
+          "attribute": "rol",
+          "value": "AnonimoExterno"
+        },
+        "asset": {
+          "attribute": "recurso",
+          "value": "pop_2"
+        },
+        "space": {
+          "attribute": "ubicacion",
+          "value": "Externa"
+        },
+        "time": {
+          "attribute": "rango_horario",
+          "value": "muy_corta"
+        },
+        "action": {
+          "attribute": "accion",
+          "value": "conexion"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,12 @@
+services:
+  xolo-api:
+    build:
+      context: ./xolo-api
+    container_name: xolo-api
+    ports:
+      - "10000:10000"
+    networks:
+      - abac-network
+
+networks:
+  abac-network:

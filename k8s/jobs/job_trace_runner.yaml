@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: trace-runner
+spec:
+  template:
+    spec:
+      containers:
+      - name: trace-runner
+        image: trace-runner
+        imagePullPolicy: Never
+        volumeMounts:
+        - name: resultado-volume
+          mountPath: /output
+      restartPolicy: Never
+      volumes:
+      - name: resultado-volume
+        hostPath:
+          path: /mnt/k8s
+          type: Directory
+  backoffLimit: 1

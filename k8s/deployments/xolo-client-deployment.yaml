@@ -1,0 +1,21 @@
+# Deployment para el cliente (persistente pero se debe entrar al container para ejecutar los comandos)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xolo-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: xolo-client
+  template:
+    metadata:
+      labels:
+        app: xolo-client
+    spec:
+      containers:
+      - name: xolo-client
+        image: xolo-client
+        imagePullPolicy: Never
+        command: ["sleep"]
+        args: ["infinity"]

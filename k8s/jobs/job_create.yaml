@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: xolo-client-create
+spec:
+  template:
+    spec:
+      containers:
+      - name: xolo-client
+        image: xolo-client
+        imagePullPolicy: Never
+        command: ["poetry", "run", "xolo-client", "create", "/data/politicas_para_test_100.json"]
+      restartPolicy: Never
+  backoffLimit: 2

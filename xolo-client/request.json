@@ -1,0 +1,7 @@
+{
+    "subject": {"attribute": "rol", "value": "Interno"},
+    "asset": {"attribute": "recurso", "value": "ssh"},
+    "space": {"attribute": "ubicacion", "value": "Externa"},
+    "time": {"attribute": "rango_horario", "value": "larga"},
+    "action": {"attribute": "accion", "value": "conexion"}
+}

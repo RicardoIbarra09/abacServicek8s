@@ -1,0 +1,23 @@
+[project]
+name = "xolo-client"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "RicardoIbarra09",email = "ricardo.ibarra@cinvestav.mx"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "httpx (>=0.28.1,<0.29.0)",
+    "pydantic (>=2.11.7,<3.0.0)",
+    "typer (>=0.16.0,<0.17.0)"
+]
+
+[tool.poetry]
+
+[tool.poetry.scripts]
+xolo-client = "xolo_client.cli:app"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

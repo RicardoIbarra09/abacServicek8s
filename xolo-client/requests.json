@@ -1,0 +1,16 @@
+[
+{
+    "subject": {"attribute": "rol", "value": "AnonimoExterno"},
+    "asset": {"attribute": "recurso", "value": "exec"},
+    "space": {"attribute": "ubicacion", "value": "Local"},
+    "time": {"attribute": "rango_horario", "value": "muy_larga"},
+    "action": {"attribute": "accion", "value": "descarga"}
+},
+{
+    "subject": {"attribute": "rol", "value": "Invitado"},
+    "asset": {"attribute": "recurso", "value": "netstat"},
+    "space": {"attribute": "ubicacion", "value": "Externa"},
+    "time": {"attribute": "rango_horario", "value": "muy_larga"},
+    "action": {"attribute": "accion", "value": "consulta"}
+}
+]
