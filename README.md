@@ -84,6 +84,13 @@ Verifica que el API esté corriendo:
 kubectl get pods
 ```
 
+Ejecuta los jobs correspondientes para crear políticas (precargadas en la imagen) y preparar las comunidades:
+
+```bash
+kubectl apply -f k8s/jobs/job_create.yaml
+kubectl apply -f k8s/jobs/job_prepare.yaml
+```
+
 ---
 
 ### 5. Ejecutar el experimento con el trace runner
